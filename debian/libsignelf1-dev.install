@@ -1,0 +1,2 @@
+debian/tmp/usr/lib/lib*.a
+debian/tmp/usr/include/signelf1/*.h
