@@ -47,8 +47,22 @@ namespace signelf
 		hashSection(&elf, ".data", &sha);
 		// get the hash for the text section
 		hashSection(&elf, ".text", &sha);
-		// get the hash for the rotext section
-		hashSection(&elf, ".rotext", &sha);
+		// get the hash for the rodata section
+		hashSection(&elf, ".rodata", &sha);
+		// get the hash for the init section
+		hashSection(&elf, ".init", &sha);
+		// get the hash for the fini section
+		hashSection(&elf, ".fini", &sha);
+		// get the hash for the ctors section
+		hashSection(&elf, ".ctors", &sha);
+		// get the hash for the dtors section
+		hashSection(&elf, ".dtors", &sha);
+		// get the hash for the dynamic section
+		hashSection(&elf, ".dynamic", &sha);
+		// get the hash for the dynsym section
+		hashSection(&elf, ".dynsym", &sha);
+		// get the hash for the dynstr section
+		hashSection(&elf, ".dynstr", &sha);
 		// size the buffer large enough
 		arRetval.resize(SHA_DIGEST_LENGTH);
 		// resolve the hash
