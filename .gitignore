@@ -1,0 +1,12 @@
+*.a
+*.o
+*cache
+
+privkey
+privkey.h
+pubkey
+pubkey.h
+
+genkeypr
+signelf
+tags
