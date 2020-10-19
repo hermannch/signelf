@@ -32,7 +32,6 @@ TARGETS=						\
 
 CTAGS= ctags
 TAGS= tags
-# directory where TARGET will be installed
 INSTALL_DIR= usr/bin
 INSTALL_DEV= usr/include/signelf1
 LIB_DIR= usr/lib
@@ -41,26 +40,26 @@ LIB_DIR= usr/lib
 INCLUDES=
 
 LIBS= -lssl -lcrypto -lstdc++
-### Do NOT change anything below this line ###
 
 MOC= /usr/bin/moc
 LDFLAGS= -L. $(LIBS)
 
-# OS Specific settings
-# Compiler/linker
-CC= gcc
-CXX= g++
-AR= ar
-
 # Position independent code option
 PIC= -fPIC
 
-CFLAGS= -Wall -g3\
-		-DQT_THREAD_SUPPORT\
-		-D_REENTRANT\
-		$(PIC)\
-		-I.\
-		$(INCLUDES)
+CFLAGS_WARNINGS = -Wall -Wextra -Wpedantic
+ifneq ("$(DEBUG)", "")
+	CFLAGS_OPTIMIZE := -Og -ggdb -g3
+else
+	CFLAGS_OPTIMIZE := -O2
+endif	
+
+CFLAGS= \
+	$(CFLAGS_WARNINGS) \
+	$(CFLAGS_OPTIMIZE) \
+	$(PIC) \
+	-I. \
+	$(INCLUDES)
 
 default all: $(TAGS) $(TARGETS)
 
@@ -128,4 +127,3 @@ distclean clean:
 	rm -f tags $(genkeypr_TARGET) $(libsign_TARGET) $(sign_TARGET) $(verify_TARGET) $(genkeypr_OBJ) $(libsign_OBJ) $(sign_OBJ) $(verify_OBJ)
 
 .PHONY=install install-lang uninstall install-dev clean distclean cleankeys lang
-
