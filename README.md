@@ -46,7 +46,7 @@ call this:
 bRetval = signelf::verifyLib(szKeyBuf, sizeof(szKeyBuf), "/path/to/shared/object.so");
 ```
 
-szKeyBuf is the public key, and it is defined in pubkey.h.
+`szKeyBuf` is the public key, and it is defined in `pubkey.h`.
 
 
 ## License
