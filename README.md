@@ -1,6 +1,9 @@
-SignElf 1.0
+# SignElf
 
-Introduction
+This repo was imported from https://sourceforge.net/projects/signelf/.
+
+## Introduction
+
 I suppose you're curious why someone would want to sign an elf binary? 
 Suppose you have an application that uses plugins. If each of those
 plugins were signed, you could be assured that each was coming from
@@ -15,32 +18,42 @@ and sign them with the keypair that was created, then append that
 signature to the shared object as another elf section.
 
 
-Installation
-make && make install
+## Installation
 
-Usage
+```
+make
+make install
+```
 
-	Signing:
-		from a prompt, run:
-			signelf <path/to/shared/object.so>
 
-	Verifying:
-		link in libsignelf.a
-		call this:
-			#include "signelf.h"
-			#include "pubkey.h"
+## Usage
 
-			 bRetval = signelf::verifyLib(szKeyBuf, sizeof(szKeyBuf), "/path/to/shared/object.so");
+### Signing
 
-			szKeyBuf is the public key, and it is defined in pubkey.h.
+from a prompt, run: `signelf <path/to/shared/object.so>`
 
-Acknowledgements
-Big thanks to Doug Keith and Pete Birch. Huge thanks to the openssl guys for making libcrypt, and
-providing a solid interface for strong encryption! Also a big thanks for Linspire, Inc for sponsoring
-this development.
+### Verifying
+
+link in libsignelf.a
+
+call this:
+```
+#include "signelf.h"
+#include "pubkey.h"
+
+bRetval = signelf::verifyLib(szKeyBuf, sizeof(szKeyBuf), "/path/to/shared/object.so");
+```
+
+szKeyBuf is the public key, and it is defined in pubkey.h.
+
+
+## Acknowledgements
+
+Big thanks to Doug Keith and Pete Birch. Huge thanks to the openssl guys for
+making libcrypt, and providing a solid interface for strong encryption! Also a
+big thanks for Linspire, Inc for sponsoring this development.
 
 Drop me a line at: joe@codenoise.com if you find this useful!
 Thanks
 
 -Joe
- 
