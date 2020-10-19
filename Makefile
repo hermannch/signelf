@@ -79,16 +79,16 @@ $(TAGS):
 	$(CTAGS) *.h *.cpp
 
 .c.o:
-	$(CC) $(CFLAGS) $(ARCH) -c $*.c
+	$(CC) $(CFLAGS) -c $*.c
 
 .cpp.o:
-	$(CXX) $(CFLAGS) $(ARCH) -c $*.cpp
+	$(CXX) $(CFLAGS) -c $*.cpp
 
 sign.o: privkey.h sign.cpp
-	$(CXX) $(CFLAGS) $(ARCH) -c $*.cpp
+	$(CXX) $(CFLAGS) -c $*.cpp
 
 verify.o: pubkey.h verify.cpp
-	$(CXX) $(CFLAGS) $(ARCH) -c $*.cpp
+	$(CXX) $(CFLAGS) -c $*.cpp
 
 $(genkeypr_TARGET): $(genkeypr_OBJ)
 	$(CXX) -o $(genkeypr_TARGET) $(genkeypr_OBJ) $(LDFLAGS)

@@ -102,7 +102,7 @@ namespace signelf
 		// if we could read the key
 		if(pKey)
 		{
-			size_t nSigLen;
+			unsigned int nSigLen;
 			arRetval.resize(RSA_size(pKey));
 
 			// sign the hash and save it to arRetval
