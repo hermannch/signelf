@@ -47,6 +47,11 @@ bRetval = signelf::verifyLib(szKeyBuf, sizeof(szKeyBuf), "/path/to/shared/object
 szKeyBuf is the public key, and it is defined in pubkey.h.
 
 
+## License
+
+LGPL-2.1-or-later
+
+
 ## Acknowledgements
 
 Big thanks to Doug Keith and Pete Birch. Huge thanks to the openssl guys for
