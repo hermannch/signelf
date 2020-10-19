@@ -1,6 +1,8 @@
 # SignElf
 
-This repo was imported from https://sourceforge.net/projects/signelf/.
+Signelf is a toolset written in C++ for signing elf binaries, specifically linux
+shared object, though in theory, any elf binary may be signed. It uses openssl's
+libcrypt to RSA sign the library, and the same to validate the signature.
 
 ## Introduction
 
@@ -52,7 +54,15 @@ szKeyBuf is the public key, and it is defined in pubkey.h.
 LGPL-2.1-or-later
 
 
-## Acknowledgements
+## Origin
+
+Original author: Joe Fox <joe@codenoise.com>
+
+Original repository: https://sourceforge.net/projects/signelf/
+
+The repo showed this additional text:
+```
+Acknowledgements
 
 Big thanks to Doug Keith and Pete Birch. Huge thanks to the openssl guys for
 making libcrypt, and providing a solid interface for strong encryption! Also a
@@ -62,3 +72,4 @@ Drop me a line at: joe@codenoise.com if you find this useful!
 Thanks
 
 -Joe
+```
