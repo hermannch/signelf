@@ -64,7 +64,7 @@ CFLAGS= \
 default all: $(TAGS) $(TARGETS)
 
 privkey:
-	openssl genrsa -out $@ 1024
+	openssl genrsa -out $@ 4096
 
 pubkey: privkey
 	openssl rsa -pubout -out $@ -in $<
