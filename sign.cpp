@@ -58,7 +58,7 @@ int main(int argc, char **argv)
 				fOut.write(reinterpret_cast<char*>(&arSig[0]), arSig.size());
 				fOut.close();
 
-				std::string sCommandline("/usr/bin/objcopy --add-section .lsesig=object.sig ");
+				std::string sCommandline("objcopy --add-section .lsesig=object.sig ");
 
 				sCommandline += argv[1];
 
